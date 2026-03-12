@@ -1,0 +1,46 @@
+#include <iostream>
+#include <stack>
+#include <queue>
+#include <string>
+using namespace std;
+
+bool isPalindrome(string str) {
+    stack<char> s;
+    for (char ch : str)
+        s.push(ch);
+
+    string rev = "";
+    while (!s.empty()) {
+        rev += s.top();
+        s.pop();
+    }
+    return (str == rev);
+}
+
+void simulateQueue() {
+    queue<string> q;
+    q.push("Customer 1");
+    q.push("Customer 2");
+    q.push("Customer 3");
+
+    cout << "\nQueue Simulation (Ticket Counter):\n";
+    while (!q.empty()) {
+        cout << q.front() << " is being served.\n";
+        q.pop();
+    }
+    cout << "All customers served!\n";
+}
+
+int main() {
+    string word;
+    cout << "Enter a word to check palindrome: ";
+    cin >> word;
+
+    if (isPalindrome(word))
+        cout << word << " is a palindrome.\n";
+    else
+        cout << word << " is not a palindrome.\n";
+
+    simulateQueue();
+    return 0;
+}

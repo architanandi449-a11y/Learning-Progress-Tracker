@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.learningtracker</groupId>
+    <artifactId>LearningTracker</artifactId>
+    <version>1.0.0</version>
+
+    <properties>
+        <!-- Using Java 21 (LTS) -->
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- This is the SQLite JDBC Driver dependency -->
+        <!-- Maven will automatically download this for you -->
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.46.0.0</version> <!-- You can update this version number -->
+        </dependency>
+        <dependency>
+            <groupId>com.github.lgooddatepicker</groupId>
+            <artifactId>LGoodDatePicker</artifactId>
+            <version>11.2.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin to make sure we use the right Java version to compile -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>21</source>
+                    <target>21</target>
+                    <release>21</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+
